@@ -14,8 +14,6 @@ import {
   SiSpringboot,
   SiFlask,
   SiExpress,
-  SiMongodb,
-  SiRedis,
   SiUnity,
   SiOpenjdk
 } from 'react-icons/si';
