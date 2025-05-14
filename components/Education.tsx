@@ -55,8 +55,6 @@ const Education = () => {
                     "Security & Privacy in GenAI",
                     "Advanced Natural Language Processing",
                     "Algorithms for Data Science",
-                    "Statistical Learning Theory",
-                    "Deep Learning for Healthcare",
                   ].map((course, idx) => (
                     <span
                       key={idx}

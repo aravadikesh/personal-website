@@ -171,11 +171,9 @@ const AboutSection: React.FC = () => {
             </p>
             <br />
             <p className="text-justify">
-              Outside of my academic and professional pursuits, I maintain an active reading habit, 
-              focusing on books that explore the intersection of technology, society, and human potential. 
-              My current reading list includes works on AI ethics, healthcare innovation, and the future 
-              of human-AI collaboration. I believe that continuous learning through diverse perspectives 
-              is crucial for developing responsible and impactful AI solutions.
+            Outside of my academic and professional pursuits, I maintain an active reading habit, 
+            with a particular interest in science fiction and fantasy. My current reading list includes the Wheel of Time series, and the Riyria Chronicles.
+            I also enjoy staying active through badminton and experimenting with new recipes in the kitchen, especially drawing on Indian and Italian cooking traditions.
             </p>
             <br />
             <p className="text-justify">
@@ -185,7 +183,7 @@ const AboutSection: React.FC = () => {
               </span>{" "}
               and creating scalable solutions that drive meaningful impact. My expertise 
               spans machine learning, natural language processing, and healthcare AI applications. I&apos;m 
-              always eager to collaborate on innovative projects that can make a difference in people&apos;s lives. 🚀
+              always eager to collaborate on innovative projects that can make a difference. 🚀
             </p>
           </div>
           <div className="text-center md:w-1/2 md:text-left">
