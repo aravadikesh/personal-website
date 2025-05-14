@@ -4,6 +4,15 @@ import { FaGithub } from "react-icons/fa";
 
 const experiences = [
   {
+    title: "Data Science for the Common Good Fellow",
+    company: "UMass Amherst",
+    period: "Summer '25",
+    location: "Amherst, MA",
+    bullets: [
+      "Upcoming position - Details to be added",
+    ],
+  },
+  {
     title: "AI Translation Engineer",
     company: "UMass BioNLP Lab",
     period: "Jan - May '25",
@@ -12,6 +21,17 @@ const experiences = [
       "Contributed to a Multi-Agent System Framework for translating clinical notes across multiple languages, enhancing global healthcare accessibility.",
       "Established comprehensive dataset processing pipelines and conducted rigorous evaluations of base models and fine-tuned variants including Llama 3.1B, Phi4 14B, and GPT4o-mini via Ollama and Unsloth.",
       "Implemented custom translation framework by modifying MedPrompt, APO, and MAPS methodologies. Achieved superior translation quality, demonstrating an 8.7% increase in BLEU score with GPT 4o mini, and outperformed all baseline models across multiple evaluation metrics.",
+    ],
+  },
+  {
+    title: "BioNLP Lab Researcher",
+    company: "UMass Amherst",
+    period: "Sep '24 - Present",
+    location: "Amherst, MA",
+    bullets: [
+      "Researching and developing advanced NLP solutions for healthcare applications",
+      "Working on multilingual clinical text processing and analysis",
+      "Contributing to the development of novel NLP architectures for medical domain adaptation",
     ],
   },
   {

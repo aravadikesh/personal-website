@@ -152,39 +152,40 @@ const AboutSection: React.FC = () => {
             <p className="text-justify">
               Hi, my name is Arav and I am a{" "}
               <span className="font-bold">{"Bay State Scholar"}</span>,
-              <span className="font-bold">{" AI/ML enthusiast"}</span>, and
-              <span className="font-bold">{" innovative"}</span> software engineer
-              based in Amherst, MA.
+              <span className="font-bold">{" Data Science enthusiast"}</span>, and
+              <span className="font-bold">{" NLP researcher"}</span> based in Amherst, MA.
             </p>
             <br />
             <p className="text-justify">
               I am currently pursuing my Master&apos;s in Computer Science at the University 
-              of Massachusetts Amherst, specializing in AI/ML. I recently completed my Bachelor&apos;s in Computer Science 
-              from UMass Amherst with a minor in Economics.
+              of Massachusetts Amherst, specializing in Data Science and Natural Language Processing. 
+              I recently completed my Bachelor&apos;s in Computer Science from UMass Amherst with a 
+              minor in Economics, where I focused on data-driven solutions and machine learning applications.
             </p>
             <br />
             <p className="text-justify">
-              I&apos;m a curious and driven individual who thrives on 
-              exploring new ideas and solving challenges creatively. Whether I&apos;m working on a 
-              project, or simply spending time with friends, I value 
-              meaningful connections and shared growth.  
+              My research interests lie at the intersection of Natural Language Processing and healthcare, 
+              where I work on developing innovative solutions for clinical text analysis and multilingual 
+              medical data processing. I&apos;m particularly passionate about creating AI systems that can 
+              make healthcare more accessible and efficient across different languages and cultures.
             </p>
             <br />
             <p className="text-justify">
-              Outside of work, you&apos;ll often find me exploring nature, experimenting with 
-              new recipes, or getting lost in a good book. I&apos;m always excited to learn 
-              from others and share my enthusiasm for building a brighter future. 🌟 
+              Outside of my academic and professional pursuits, I maintain an active reading habit, 
+              focusing on books that explore the intersection of technology, society, and human potential. 
+              My current reading list includes works on AI ethics, healthcare innovation, and the future 
+              of human-AI collaboration. I believe that continuous learning through diverse perspectives 
+              is crucial for developing responsible and impactful AI solutions.
             </p>
             <br />
             <p className="text-justify">
               I believe in{" "}
               <span className="font-bold text-teal-500">
-                pushing the boundaries of technology
+                leveraging data science and NLP to solve real-world challenges
               </span>{" "}
-              and creating scalable solutions that drive real business value. My expertise 
-              spans full-stack development, machine learning, and LLM engineering/applications. I&apos;m 
-              always eager to collaborate on innovative projects that create meaningful 
-              impact. 🚀
+              and creating scalable solutions that drive meaningful impact. My expertise 
+              spans machine learning, natural language processing, and healthcare AI applications. I&apos;m 
+              always eager to collaborate on innovative projects that can make a difference in people&apos;s lives. 🚀
             </p>
           </div>
           <div className="text-center md:w-1/2 md:text-left">

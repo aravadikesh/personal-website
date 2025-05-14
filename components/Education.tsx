@@ -35,9 +35,14 @@ const Education = () => {
                 GPA: 4.0
               </p>
               <div className="mb-4">
+                <h4 className="font-semibold mb-2">Concentration:</h4>
+                <p className="text-gray-600 dark:text-gray-300">Data Science</p>
+              </div>
+              <div className="mb-4">
                 <h4 className="font-semibold mb-2">Achievements:</h4>
                 <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-300">
                   <li>Bay State Scholar</li>
+                  <li>Data Science for the Common Good Fellow (Summer 2025)</li>
                 </ul>
               </div>
               <div className="mb-4">
@@ -50,6 +55,8 @@ const Education = () => {
                     "Security & Privacy in GenAI",
                     "Advanced Natural Language Processing",
                     "Algorithms for Data Science",
+                    "Statistical Learning Theory",
+                    "Deep Learning for Healthcare",
                   ].map((course, idx) => (
                     <span
                       key={idx}
