@@ -16,17 +16,6 @@ const researchExperiences = [
     ],
   },
   {
-    title: "BioNLP Lab Researcher",
-    company: "UMass Amherst",
-    period: "Sep '24 - Present",
-    location: "Amherst, MA",
-    bullets: [
-      "Researching and developing advanced NLP solutions for healthcare applications",
-      "Working on multilingual clinical text processing and analysis",
-      "Contributing to the development of novel NLP architectures for medical domain adaptation",
-    ],
-  },
-  {
     title: "Independent Researcher",
     company: "UMass Rescue Lab",
     period: "Aug - Dec '24",
