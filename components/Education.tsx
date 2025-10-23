@@ -57,7 +57,7 @@ const Education = () => {
                       "Advanced Natural Language Processing",
                       "Algorithms for Data Science",
                       "Advanced Information Retrieval",
-                      "Statistics",
+                      "Statistics for Data Science",
                     ].map((course, idx) => (
                       <span
                         key={idx}
@@ -80,7 +80,7 @@ const Education = () => {
               <div className="absolute -inset-0.5 bg-gradient-to-r from-teal-500 to-cyan-400 rounded-xl opacity-0 group-hover:opacity-100 blur transition duration-300"></div>
               <div className="relative">
                 <h2 className="text-2xl font-bold bg-gradient-to-r from-teal-600 to-cyan-500 bg-clip-text text-transparent mb-2">
-                  Bachelor of Science in Computer Science with a Minor in Economics
+                  Bachelor of Science in Computer Science
                 </h2>
                 <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-100">
                   University of Massachusetts Amherst
@@ -91,6 +91,10 @@ const Education = () => {
                 <p className="text-gray-600 dark:text-gray-300 mb-4 font-semibold">
                   GPA: 3.93
                 </p>
+                <div className="mb-4">
+                  <h4 className="font-semibold mb-2 text-gray-800 dark:text-gray-100">Minor:</h4>
+                  <p className="text-gray-600 dark:text-gray-300">Economics</p>
+                </div>
                 <div className="mb-4">
                   <h4 className="font-semibold mb-2 text-gray-800 dark:text-gray-100">Achievements:</h4>
                   <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-300">

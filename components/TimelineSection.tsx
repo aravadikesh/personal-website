@@ -56,6 +56,7 @@ const workExperiences: Experience[] = [
     company: "UMass Center for Data Science and AI",
     period: "May - Aug '25",
     location: "Boston, MA",
+    github: "https://github.com/UMassCDS/mc-classifier-pipeline",
     bullets: [
       "Led development of Media Cloud classifier pipeline by architecting end-to-end dockerized system with automated article retrieval, annotation, and classification — reducing manual researcher effort by 90% while processing 100,000+ articles from a 2-billion-article database at 96% accuracy.",
       "Built production-ready ML classification suite with containerized BERT and Naive Bayes models, Optuna hyperparameter optimization, and automated evaluation frameworks.",
