@@ -1,6 +1,6 @@
 import React from "react";
 import SlideUp from "./SlideUp";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { HiDocumentText } from "react-icons/hi";
 
 interface Experience {
@@ -11,6 +11,7 @@ interface Experience {
   bullets: string[];
   github?: string;
   paper?: string;
+  link?: string;
 }
 
 const researchExperiences: Experience[] = [
@@ -91,9 +92,13 @@ const ExperienceTimeline = ({ experiences }: { experiences: Experience[] }) => {
 
       {experiences.map((experience, idx) => {
         return (
-          <div key={idx} className="mb-16 w-full">
+          <div
+            key={idx}
+            className="mb-16 w-full"
+            style={{ animationDelay: `${idx * 0.15}s` }}
+          >
             <SlideUp offset="-300px 0px -300px 0px">
-              <div className="flex justify-between items-center w-full animate-slideUpCubiBezier animation-delay-1">
+              <div className="flex justify-between items-center w-full animate-slideUpCubiBezier">
                 {/* Time and Location */}
                 <div className="w-5/12 text-right pr-8">
                   <div>
@@ -126,6 +131,17 @@ const ExperienceTimeline = ({ experiences }: { experiences: Experience[] }) => {
                         </h4>
                       </div>
                       <div className="flex gap-2 ml-4">
+                        {experience.link && (
+                          <a
+                            href={experience.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-all hover:scale-110"
+                            aria-label="External Link"
+                          >
+                            <FaExternalLinkAlt className="text-xl" />
+                          </a>
+                        )}
                         {experience.github && (
                           <a
                             href={experience.github}
@@ -170,20 +186,20 @@ const ExperienceTimeline = ({ experiences }: { experiences: Experience[] }) => {
 
 const TimelineSection = () => {
   return (
-    <section id="experience" className="bg-gradient-to-b from-gray-50 to-white dark:from-stone-800 dark:to-stone-900">
-      {/* Research Experience Section */}
-      <h1 className="my-10 text-center font-bold text-4xl bg-gradient-to-r from-teal-600 to-cyan-500 bg-clip-text text-transparent">
-        Research Experience
-        <hr className="w-6 h-1 mx-auto my-4 bg-gradient-to-r from-teal-500 to-cyan-400 border-0 rounded"></hr>
-      </h1>
-      <ExperienceTimeline experiences={researchExperiences} />
-
+    <section id="experience">
       {/* Work Experience Section */}
-      <h1 className="my-10 mt-24 text-center font-bold text-4xl bg-gradient-to-r from-teal-600 to-cyan-500 bg-clip-text text-transparent">
+      <h1 className="my-10 text-center font-bold text-4xl bg-gradient-to-r from-teal-600 to-cyan-500 bg-clip-text text-transparent">
         Work Experience
         <hr className="w-6 h-1 mx-auto my-4 bg-gradient-to-r from-teal-500 to-cyan-400 border-0 rounded"></hr>
       </h1>
       <ExperienceTimeline experiences={workExperiences} />
+
+      {/* Research Experience Section */}
+      <h1 className="my-10 mt-24 text-center font-bold text-4xl bg-gradient-to-r from-teal-600 to-cyan-500 bg-clip-text text-transparent">
+        Research Experience
+        <hr className="w-6 h-1 mx-auto my-4 bg-gradient-to-r from-teal-500 to-cyan-400 border-0 rounded"></hr>
+      </h1>
+      <ExperienceTimeline experiences={researchExperiences} />
     </section>
   );
 };

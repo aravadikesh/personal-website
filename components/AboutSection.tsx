@@ -19,6 +19,7 @@ import {
   SiPytorch,
   SiJira
 } from 'react-icons/si';
+import { HiLink } from 'react-icons/hi';
 
 interface SkillItem {
   name: string;
@@ -26,7 +27,9 @@ interface SkillItem {
   color: string;
 }
 
+// Skills organized by category: Languages, Frameworks & Libraries, Tools & Platforms
 const skills: SkillItem[] = [
+  // Languages
   {
     name: "Python",
     Icon: SiPython,
@@ -47,60 +50,22 @@ const skills: SkillItem[] = [
     Icon: SiOpenjdk,
     color: "#ED8B00"
   },
-  {
-    name: "AWS",
-    Icon: SiAmazonaws,
-    color: "#FF9900"
-  },
+
+  // Frameworks & Libraries
   {
     name: "PyTorch",
     Icon: SiPytorch,
     color: "#EE4C2C"
   },
   {
-    name: "Git",
-    Icon: SiGit,
-    color: "#F05032"
-  },
-  {
-    name: "Kubernetes",
-    Icon: SiKubernetes,
-    color: "#326CE5"
-  },
-  {
-    name: "MySQL",
-    Icon: SiMysql,
-    color: "#4479A1"
-  },
-  {
-    name: "PostgreSQL",
-    Icon: SiPostgresql,
-    color: "#316192"
-  },
-  {
-    name: "Apache Spark",
-    Icon: SiApachespark,
-    color: "#E25A1C"
-  },
-  {
-    name: "Docker",
-    Icon: SiDocker,
-    color: "#2496ED"
-  },
-  {
-    name: "Jira",
-    Icon: SiJira,
-    color: "#0052CC"
+    name: "React",
+    Icon: SiReact,
+    color: "#61DAFB"
   },
   {
     name: "Node.js",
     Icon: SiNodedotjs,
     color: "#339933"
-  },
-  {
-    name: "React",
-    Icon: SiReact,
-    color: "#61DAFB"
   },
   {
     name: "Spring Boot",
@@ -116,6 +81,53 @@ const skills: SkillItem[] = [
     name: "Express",
     Icon: SiExpress,
     color: "#000000"
+  },
+  {
+    name: "LangGraph",
+    Icon: HiLink,
+    color: "#10B981"
+  },
+
+  // Tools & Platforms
+  {
+    name: "AWS",
+    Icon: SiAmazonaws,
+    color: "#FF9900"
+  },
+  {
+    name: "Git",
+    Icon: SiGit,
+    color: "#F05032"
+  },
+  {
+    name: "Docker",
+    Icon: SiDocker,
+    color: "#2496ED"
+  },
+  {
+    name: "Kubernetes",
+    Icon: SiKubernetes,
+    color: "#326CE5"
+  },
+  {
+    name: "Apache Spark",
+    Icon: SiApachespark,
+    color: "#E25A1C"
+  },
+  {
+    name: "MySQL",
+    Icon: SiMysql,
+    color: "#4479A1"
+  },
+  {
+    name: "PostgreSQL",
+    Icon: SiPostgresql,
+    color: "#316192"
+  },
+  {
+    name: "Jira",
+    Icon: SiJira,
+    color: "#0052CC"
   }
 ];
 
@@ -201,12 +213,17 @@ const AboutSection: React.FC = () => {
             </h1>
             <div className="flex flex-wrap gap-4 justify-center md:justify-start">
               {skills.map((skill, idx) => (
-                <SkillIcon
+                <div
                   key={idx}
-                  name={skill.name}
-                  Icon={skill.Icon}
-                  color={skill.color}
-                />
+                  className="animate-fadeIn"
+                  style={{ animationDelay: `${idx * 0.05}s` }}
+                >
+                  <SkillIcon
+                    name={skill.name}
+                    Icon={skill.Icon}
+                    color={skill.color}
+                  />
+                </div>
               ))}
             </div>
           </div>

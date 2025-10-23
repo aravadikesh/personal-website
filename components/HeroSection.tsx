@@ -65,17 +65,45 @@ const HeroSection = () => {
             </a>
           </div>
 
-          <Link
-            to="projects"
-            className="inline-block text-white font-semibold px-8 py-3 bg-gradient-to-r from-teal-600 to-cyan-500 rounded-lg shadow-lg hover:shadow-teal-500/50 hover:scale-105 transition-all duration-300"
-            activeClass="active"
-            spy={true}
-            smooth={true}
-            offset={-100}
-            duration={500}
-          >
-            View Projects
-          </Link>
+          {/* Navigation Buttons */}
+          <div className="flex flex-wrap gap-3 justify-center md:justify-start animate-fadeIn animation-delay-4">
+            <Link
+              to="experience"
+              className="inline-block text-white font-semibold px-6 py-3 bg-gradient-to-r from-teal-600 to-cyan-500 rounded-lg shadow-lg hover:shadow-teal-500/50 hover:scale-105 transition-all duration-300"
+              activeClass="active"
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={500}
+              style={{ animationDelay: '0.5s' }}
+            >
+              Work Experience
+            </Link>
+            <Link
+              to="experience"
+              className="inline-block text-teal-600 dark:text-teal-400 font-semibold px-6 py-3 border-2 border-teal-600 dark:border-teal-400 rounded-lg hover:bg-teal-600 hover:text-white dark:hover:bg-teal-400 dark:hover:text-gray-900 hover:scale-105 transition-all duration-300"
+              activeClass="active"
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={500}
+              style={{ animationDelay: '0.6s' }}
+            >
+              Research
+            </Link>
+            <Link
+              to="projects"
+              className="inline-block text-teal-600 dark:text-teal-400 font-semibold px-6 py-3 border-2 border-teal-600 dark:border-teal-400 rounded-lg hover:bg-teal-600 hover:text-white dark:hover:bg-teal-400 dark:hover:text-gray-900 hover:scale-105 transition-all duration-300"
+              activeClass="active"
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={500}
+              style={{ animationDelay: '0.7s' }}
+            >
+              Projects
+            </Link>
+          </div>
         </div>
       </div>
       <div className="flex flex-row items-center text-center justify-center">
