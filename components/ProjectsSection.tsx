@@ -36,10 +36,10 @@ const projects = [
 
 const ProjectsSection = () => {
   return (
-    <section id="projects">
-      <h1 className="my-10 text-center font-bold text-4xl">
+    <section id="projects" className="bg-white dark:bg-stone-900">
+      <h1 className="my-10 text-center font-bold text-4xl bg-gradient-to-r from-teal-600 to-cyan-500 bg-clip-text text-transparent">
         Projects
-        <hr className="w-6 h-1 mx-auto my-4 bg-teal-500 border-0 rounded"></hr>
+        <hr className="w-6 h-1 mx-auto my-4 bg-gradient-to-r from-teal-500 to-cyan-400 border-0 rounded"></hr>
       </h1>
 
       <div className="flex flex-col space-y-28">
@@ -47,38 +47,45 @@ const ProjectsSection = () => {
           return (
             <div key={idx}>
               <SlideUp offset="-300px 0px -300px 0px">
-                <div className="flex flex-col  animate-slideUpCubiBezier animation-delay-2 md:flex-row md:space-x-12">
-                  <div className=" md:w-1/2">
-                    {project.link ? (
-                      <Link href={project.link}>
+                <div className="flex flex-col animate-slideUpCubiBezier animation-delay-2 md:flex-row md:space-x-12 group">
+                  <div className="md:w-1/2">
+                    <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                      {project.link ? (
+                        <Link href={project.link}>
+                          <div className="relative group/image">
+                            <Image
+                              src={project.image}
+                              alt={project.name}
+                              width={1000}
+                              height={1000}
+                              className="rounded-2xl transition-all duration-300 group-hover/image:scale-105"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-teal-900/50 to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+                          </div>
+                        </Link>
+                      ) : (
                         <Image
                           src={project.image}
-                          alt=""
+                          alt={project.name}
                           width={1000}
                           height={1000}
-                          className="rounded-xl shadow-xl hover:opacity-70"
+                          className="rounded-2xl"
                         />
-                      </Link>
-                    ) : (
-                      <Image
-                        src={project.image}
-                        alt=""
-                        width={1000}
-                        height={1000}
-                        className="rounded-xl shadow-xl"
-                      />
-                    )}
+                      )}
+                    </div>
                   </div>
-                  <div className="mt-8 md:w-1/2">
-                    <h1 className="text-4xl font-bold mb-6">{project.name}</h1>
-                    <p className="text-xl leading-7 mb-4 text-neutral-600 dark:text-neutral-400">
+                  <div className="mt-8 md:w-1/2 flex flex-col justify-center">
+                    <h1 className="text-4xl font-bold mb-6 bg-gradient-to-r from-teal-600 to-cyan-500 bg-clip-text text-transparent">
+                      {project.name}
+                    </h1>
+                    <p className="text-lg leading-7 mb-6 text-gray-700 dark:text-gray-300">
                       {project.description}
                     </p>
-                    <div className="flex flex-wrap gap-2 mb-4">
+                    <div className="flex flex-wrap gap-2 mb-6">
                       {project.techStack.map((tech, techIdx) => (
                         <span
                           key={techIdx}
-                          className="px-3 py-1 text-sm bg-teal-500/10 text-teal-500 dark:text-teal-400 rounded-full font-medium"
+                          className="px-4 py-2 text-sm bg-gradient-to-r from-teal-100 to-cyan-100 dark:from-teal-900/50 dark:to-cyan-900/50 text-teal-700 dark:text-teal-300 rounded-full font-semibold hover:scale-105 transition-transform border border-teal-200 dark:border-teal-700"
                         >
                           {tech}
                         </span>
@@ -87,15 +94,15 @@ const ProjectsSection = () => {
                     <div className="flex flex-row align-bottom space-x-4">
                       <Link href={project.github} target="_blank">
                         <BsGithub
-                          size={30}
-                          className="hover:-translate-y-1 transition-transform cursor-pointer"
+                          size={32}
+                          className="hover:-translate-y-1 hover:text-teal-600 dark:hover:text-teal-400 transition-all cursor-pointer"
                         />
                       </Link>
                       {project.link && (
                         <Link href={project.link} target="_blank">
                           <BsArrowUpRightSquare
-                            size={30}
-                            className="hover:-translate-y-1 transition-transform cursor-pointer"
+                            size={32}
+                            className="hover:-translate-y-1 hover:text-cyan-600 dark:hover:text-cyan-400 transition-all cursor-pointer"
                           />
                         </Link>
                       )}
@@ -106,7 +113,7 @@ const ProjectsSection = () => {
             </div>
           )
         })}
-        
+
       </div>
     </section>
   )

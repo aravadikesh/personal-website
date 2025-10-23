@@ -1,21 +1,23 @@
 import React from 'react';
-import { 
-  SiPython, 
-  SiTypescript, 
-  SiJavascript, 
-  SiCplusplus,
+import {
+  SiPython,
+  SiTypescript,
+  SiJavascript,
   SiMysql,
   SiPostgresql,
   SiAmazonaws,
   SiKubernetes,
-  SiOpencv,
   SiGit,
   SiDocker,
   SiSpringboot,
   SiFlask,
   SiExpress,
-  SiUnity,
-  SiOpenjdk
+  SiReact,
+  SiNodedotjs,
+  SiApachespark,
+  SiOpenjdk,
+  SiPytorch,
+  SiJira
 } from 'react-icons/si';
 
 interface SkillItem {
@@ -46,9 +48,24 @@ const skills: SkillItem[] = [
     color: "#ED8B00"
   },
   {
-    name: "C++",
-    Icon: SiCplusplus,
-    color: "#00599C"
+    name: "AWS",
+    Icon: SiAmazonaws,
+    color: "#FF9900"
+  },
+  {
+    name: "PyTorch",
+    Icon: SiPytorch,
+    color: "#EE4C2C"
+  },
+  {
+    name: "Git",
+    Icon: SiGit,
+    color: "#F05032"
+  },
+  {
+    name: "Kubernetes",
+    Icon: SiKubernetes,
+    color: "#326CE5"
   },
   {
     name: "MySQL",
@@ -61,29 +78,29 @@ const skills: SkillItem[] = [
     color: "#316192"
   },
   {
-    name: "AWS",
-    Icon: SiAmazonaws,
-    color: "#FF9900"
-  },
-  {
-    name: "Kubernetes",
-    Icon: SiKubernetes,
-    color: "#326CE5"
-  },
-  {
-    name: "OpenCV",
-    Icon: SiOpencv,
-    color: "#5C3EE8"
-  },
-  {
-    name: "Git",
-    Icon: SiGit,
-    color: "#F05032"
+    name: "Apache Spark",
+    Icon: SiApachespark,
+    color: "#E25A1C"
   },
   {
     name: "Docker",
     Icon: SiDocker,
     color: "#2496ED"
+  },
+  {
+    name: "Jira",
+    Icon: SiJira,
+    color: "#0052CC"
+  },
+  {
+    name: "Node.js",
+    Icon: SiNodedotjs,
+    color: "#339933"
+  },
+  {
+    name: "React",
+    Icon: SiReact,
+    color: "#61DAFB"
   },
   {
     name: "Spring Boot",
@@ -99,11 +116,6 @@ const skills: SkillItem[] = [
     name: "Express",
     Icon: SiExpress,
     color: "#000000"
-  },
-  {
-    name: "Unity",
-    Icon: SiUnity,
-    color: "#000000"
   }
 ];
 
@@ -115,20 +127,20 @@ interface SkillIconProps {
 
 const SkillIcon: React.FC<SkillIconProps> = ({ name, Icon, color }) => {
   return (
-    <div className="flex flex-col items-center gap-2">
-      <div 
-        className="p-4 rounded-lg transition-all duration-300 hover:bg-gray-100 cursor-pointer"
+    <div className="group flex flex-col items-center gap-2">
+      <div
+        className="p-4 rounded-xl transition-all duration-300 hover:bg-gradient-to-br hover:from-teal-50 hover:to-cyan-50 dark:hover:from-teal-900/20 dark:hover:to-cyan-900/20 cursor-pointer border border-transparent hover:border-teal-200 dark:hover:border-teal-700 hover:shadow-lg hover:shadow-teal-500/20"
         role="button"
         tabIndex={0}
         aria-label={`${name} skill`}
       >
-        <Icon 
-          className="w-8 h-8 transition-all duration-300 group-hover:scale-110" 
+        <Icon
+          className="w-8 h-8 transition-all duration-300 group-hover:scale-110 group-hover:-rotate-6"
           style={{ color: color }}
           aria-hidden="true"
         />
       </div>
-      <span className="text-sm font-medium">
+      <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
         {name}
       </span>
     </div>
@@ -137,60 +149,59 @@ const SkillIcon: React.FC<SkillIconProps> = ({ name, Icon, color }) => {
 
 const AboutSection: React.FC = () => {
   return (
-    <section id="about">
+    <section id="about" className="bg-gradient-to-b from-white to-gray-50 dark:from-stone-900 dark:to-stone-800">
       <div className="my-12 pb-12 md:pt-16 md:pb-48">
-        <h1 className="text-center font-bold text-4xl">
+        <h1 className="text-center font-bold text-4xl bg-gradient-to-r from-teal-600 to-cyan-500 bg-clip-text text-transparent">
           About Me
-          <hr className="w-6 h-1 mx-auto my-4 bg-teal-500 border-0 rounded"></hr>
+          <hr className="w-6 h-1 mx-auto my-4 bg-gradient-to-r from-teal-500 to-cyan-400 border-0 rounded"></hr>
         </h1>
 
         <div className="flex flex-col space-y-10 items-stretch justify-center align-top md:space-x-10 md:space-y-0 md:p-4 md:flex-row md:text-left">
           <div className="md:w-1/2">
-            <h1 className="text-center text-2xl font-bold mb-6 md:text-left">
+            <h1 className="text-center text-2xl font-bold mb-6 md:text-left bg-gradient-to-r from-teal-600 to-cyan-500 bg-clip-text text-transparent">
               Get to know me!
             </h1>
-            <p className="text-justify">
-              Hi, my name is Arav and I am a{" "}
-              <span className="font-bold">{"Bay State Scholar"}</span>,
-              <span className="font-bold">{" Data Science enthusiast"}</span>, and
-              <span className="font-bold">{" NLP researcher"}</span> based in Amherst, MA.
-            </p>
-            <br />
-            <p className="text-justify">
-              I am currently pursuing my Master&apos;s in Computer Science at the University 
-              of Massachusetts Amherst, specializing in Data Science and Natural Language Processing. 
-              I recently completed my Bachelor&apos;s in Computer Science from UMass Amherst with a 
-              minor in Economics, where I focused on data-driven solutions and machine learning applications.
-            </p>
-            <br />
-            <p className="text-justify">
-              My research interests lie at the intersection of Natural Language Processing and healthcare, 
-              where I work on developing innovative solutions for clinical text analysis and multilingual 
-              medical data processing. I&apos;m particularly passionate about creating AI systems that can 
-              make healthcare more accessible and efficient across different languages and cultures.
-            </p>
-            <br />
-            <p className="text-justify">
-            Outside of my academic and professional pursuits, I maintain an active reading habit, 
-            with a particular interest in science fiction and fantasy. My current reading list includes the Wheel of Time series, and the Riyria Chronicles.
-            I also enjoy staying active through badminton and experimenting with new recipes in the kitchen, especially drawing on Indian and Italian cooking traditions.
-            </p>
-            <br />
-            <p className="text-justify">
-              I believe in{" "}
-              <span className="font-bold text-teal-500">
-                leveraging data science and NLP to solve real-world challenges
-              </span>{" "}
-              and creating scalable solutions that drive meaningful impact. My expertise 
-              spans machine learning, natural language processing, and healthcare AI applications. I&apos;m 
-              always eager to collaborate on innovative projects that can make a difference. 🚀
-            </p>
+            <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+              <p>
+                Hi, my name is Arav and I am a{" "}
+                <span className="font-bold text-teal-600 dark:text-teal-400">Bay State Scholar</span>,{" "}
+                <span className="font-bold text-teal-600 dark:text-teal-400">AI/ML Engineer</span>, and{" "}
+                <span className="font-bold text-teal-600 dark:text-teal-400">Healthcare NLP Researcher</span>{" "}
+                based in Amherst, MA.
+              </p>
+
+              <p>
+                I am currently pursuing my Master&apos;s in Computer Science at the University
+                of Massachusetts Amherst with a <span className="font-semibold">4.0 GPA</span>,
+                specializing in Data Science and Natural Language Processing.
+                I recently completed my Bachelor&apos;s in Computer Science from UMass Amherst with a
+                minor in Economics (GPA: 3.93), where I focused on data-driven solutions and machine learning applications.
+              </p>
+
+              <p>
+                My research interests lie at the intersection of Natural Language Processing and healthcare,
+                where I work on developing innovative solutions for clinical text analysis and multilingual
+                medical data processing. I&apos;m particularly passionate about creating AI systems that can
+                make healthcare more accessible and efficient across different languages and cultures.
+              </p>
+
+              <p>
+                I believe in{" "}
+                <span className="font-bold bg-gradient-to-r from-teal-600 to-cyan-500 bg-clip-text text-transparent">
+                  leveraging AI/ML and NLP to solve real-world challenges
+                </span>{" "}
+                and creating scalable, production-ready solutions that drive meaningful impact. My expertise
+                spans machine learning, natural language processing, and healthcare AI applications.
+              </p>
+            </div>
           </div>
           <div className="text-center md:w-1/2 md:text-left">
-            <h1 className="text-2xl font-bold mb-6">My Skills</h1>
-            <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+            <h1 className="text-2xl font-bold mb-6 bg-gradient-to-r from-teal-600 to-cyan-500 bg-clip-text text-transparent">
+              My Skills
+            </h1>
+            <div className="flex flex-wrap gap-4 justify-center md:justify-start">
               {skills.map((skill, idx) => (
-                <SkillIcon 
+                <SkillIcon
                   key={idx}
                   name={skill.name}
                   Icon={skill.Icon}
