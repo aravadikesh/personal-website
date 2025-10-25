@@ -29,14 +29,14 @@ const researchExperiences: Experience[] = [
   },
   {
     title: "ML Engineer",
-    company: "DeepFakeDetector Project",
+    company: "UMass RescueBox",
     period: "Aug - Dec '24",
     location: "Amherst, MA",
-    github: "https://github.com/UMass-Rescue/RescueBox/tree/main/src/deepfake-detection",
+    github: "https://github.com/UMass-Rescue/RescueBox",
     bullets: [
-      "Built a production-ready deepfake detection system for digital forensics. Converted multiple PyTorch models (BNext, Transformer, ResNet50) to ONNX, integrated into RescueBox plugin architecture with RESTful APIs and auto-generated UI.",
-      "Optimized inference using ONNX Runtime for real-time image classification (Real/Fake with confidence scores).",
-      "Based on CVPR 2024 research, enabling forensic investigators to analyze images via web and desktop interfaces.",
+      "Contributed to RescueBox, an open-source digital forensics platform developed by UMass Rescue Lab for processing large-scale digital evidence. The system enables forensic professionals and rescue operations to rapidly analyze thousands of images and audio files using ML-powered automation — critical for time-sensitive investigations.",
+      "Engineered and deployed modular forensic analysis plugins, including deepfake detection and perceptual hash-based image similarity systems. Built RESTful APIs, PostgreSQL + pgvector-backed vector search, and auto-generated UIs, reducing manual forensic analysis time by ~70% and improving cross-platform accessibility.",
+      "Optimized inference and data pipelines by converting PyTorch models to ONNX and integrating ONNX Runtime for real-time performance, achieving 3× faster inference speeds and enabling large-scale duplicate image detection (10K+ images) through high-throughput perceptual hashing algorithms (pHash, dHash, PDQ, etc.).",
     ],
   },
 ];

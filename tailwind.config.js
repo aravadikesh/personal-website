@@ -46,6 +46,7 @@ module.exports = {
         slideUpCubiBezier: "slideUp 1s cubic-bezier(0.165, 0.84, 0.44, 1)",
         gradient: "gradient 3s ease infinite",
         shimmer: "shimmer 2s linear infinite",
+        scroll: "scroll 30s linear infinite",
       },
       animationDelay: {
         0: "0s",
@@ -74,6 +75,10 @@ module.exports = {
         shimmer: {
           "0%": { transform: "translateX(-100%)" },
           "100%": { transform: "translateX(100%)" },
+        },
+        scroll: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-100%)" },
         },
       },
       backgroundSize: {
