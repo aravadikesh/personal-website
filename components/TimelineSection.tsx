@@ -48,7 +48,8 @@ const workExperiences: Experience[] = [
     period: "Sep '25 - Present",
     location: "Boston, MA",
     bullets: [
-      "Architected Model Context Protocol (MCP) server supporting PDF, CSV, and DOCX generation with seamless GenAI platform UI integration, enabling users to create and export ideas in multiple formats directly through the chat interface.",
+      "Designed and deployed Model Context Protocol (MCP) servers to enable document generation (PDF, DOCX) directly through LLM chat interfaces, improving content workflow efficiency by ~40%.",
+      "Implemented an MCP connector for Amazon Athena, enabling natural language querying of AWS-hosted databases through LLMs, cutting query formulation and debugging time by ~75%, empowering non-technical users to perform structured data seamlessly.",
     ],
   },
   {
@@ -58,8 +59,8 @@ const workExperiences: Experience[] = [
     location: "Boston, MA",
     github: "https://github.com/UMassCDS/mc-classifier-pipeline",
     bullets: [
-      "Led development of Media Cloud classifier pipeline by architecting end-to-end dockerized system with automated article retrieval, annotation, and classification — reducing manual researcher effort by 90% while processing 100,000+ articles from a 2-billion-article database at 96% accuracy.",
-      "Built production-ready ML classification suite with containerized BERT and Naive Bayes models, Optuna hyperparameter optimization, and automated evaluation frameworks.",
+      "Led development of Media Cloud classifier pipeline, a fully automated, containerized BERT-based classifier processing 100K+ news articles from a 2B+ corpus with 96% accuracy, automating ingestion, labeling, and model training.",
+      "Implemented Optuna-based hyperparameter optimization and dashboard-driven evaluation, boosting reproducibility and deployment-ready ML workflows.",
     ],
   },
   {
@@ -68,9 +69,9 @@ const workExperiences: Experience[] = [
     period: "May - Sep '24",
     location: "Los Angeles, CA",
     bullets: [
-      "Built RAG-powered customer support chatbot using LangChain and FAISS vector database architecture, achieving 88% customer satisfaction, 30% faster ticket resolution, and handling 500+ daily queries.",
-      "Reduced operational costs by developing an automated query resolution system that deflects routine support tickets while maintaining high accuracy on technical questions — saving an estimated $15K annually.",
-      "Engineered production-grade conversational AI system with JavaScript frontend, SpringBoot microservices, Flask APIs on AWS Lambda, and Kubernetes — achieving <200ms response time and 99.5% uptime.",
+      "Developed a RAG-powered support chatbot using LangChain and FAISS vector database to handle 500+ daily queries, achieving customer satisfaction improved by 30% and achieving 88% user satisfaction.",
+      "Created an automated query classification system that reduced manual triage and saved $15K annually in support costs.",
+      "Deployed end-to-end production-grade conversational AI systems with JavaScript frontend, Spring Boot microservices, Flask APIs on AWS Lambda, and Kubernetes, achieving <200ms response time and 99.5% uptime.",
     ],
   },
   {
