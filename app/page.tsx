@@ -1,23 +1,17 @@
-import AboutSection from "@/components/AboutSection"
 import HeroSection from "@/components/HeroSection"
-import ProjectsSection from "@/components/ProjectsSection"
-import TimelineSection from "@/components/TimelineSection"
+import AboutSection from "@/components/AboutSection"
 import Education from "@/components/Education"
-import CurrentWorkTicker from "@/components/CurrentWorkTicker"
+import TimelineSection from "@/components/TimelineSection"
+import ProjectsSection from "@/components/ProjectsSection"
 
 export default function Home() {
   return (
-    <main>
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 md:max-w-5xl">
-        <HeroSection />
-      </div>
-      <CurrentWorkTicker />
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 md:max-w-5xl">
-        <AboutSection />
-        <Education />
-        <TimelineSection />
-        <ProjectsSection />
-      </div>
+    <main className="relative pb-32">
+      <HeroSection />
+      <AboutSection />
+      <Education />
+      <TimelineSection />
+      <ProjectsSection />
     </main>
   )
 }

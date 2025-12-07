@@ -1,9 +1,23 @@
 "use client"
 import "../styles/globals.css"
-import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
-import { ThemeProvider } from "next-themes"
+import NeuralMesh from "@/components/NeuralMesh"
+import FloatingDock from "@/components/FloatingDock"
 import { Analytics } from "@vercel/analytics/react"
+import { Inter_Tight, IBM_Plex_Mono } from 'next/font/google'
+
+const interTight = Inter_Tight({
+  subsets: ['latin'],
+  variable: '--font-inter-tight',
+  display: 'swap',
+})
+
+const ibmPlexMono = IBM_Plex_Mono({
+  weight: ['400', '500', '600'],
+  subsets: ['latin'],
+  variable: '--font-mono',
+  display: 'swap',
+})
 
 export default function RootLayout({
   children,
@@ -11,21 +25,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
+    <html lang="en" className="dark" suppressHydrationWarning>
       <head />
-      <body className="dark:bg-stone-900">
-        <ThemeProvider enableSystem={true} attribute="class">
-          <Navbar />
-          {children}
-          <Footer />
-          <Analytics />
-        </ThemeProvider>
+      <body className={`${interTight.variable} ${ibmPlexMono.variable} scan-lines relative`}>
+        <NeuralMesh />
+        {children}
+        <FloatingDock />
+        <Footer />
+        <Analytics />
       </body>
     </html>
   )
 }
-

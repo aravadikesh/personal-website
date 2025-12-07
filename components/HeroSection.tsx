@@ -1,123 +1,125 @@
-"use client" // this is a client component
-import React from "react"
-import Image from "next/image"
-import { Link } from "react-scroll/modules"
-import { HiArrowDown } from "react-icons/hi"
-import { AiOutlineMail, AiOutlineGithub, AiOutlineLinkedin } from "react-icons/ai"
+'use client'
+
+import { motion } from 'framer-motion'
+import { AiOutlineGithub, AiOutlineLinkedin } from 'react-icons/ai'
+import { HiOutlineDocument } from 'react-icons/hi'
+import SpotlightMask from './SpotlightMask'
 
 const HeroSection = () => {
   return (
-    <section id="home">
-      <div className="flex flex-col text-center items-center justify-center animate-fadeIn animation-delay-2 my-10 py-16 sm:py-32 md:py-48 md:flex-row md:space-x-8 md:text-left">
-        <div className="md:mt-2 md:w-1/2">
-          <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-teal-500 to-cyan-400 rounded-full blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-            <Image
-              src="/headshot.png"
-              alt="Arav Adikesh Ramakrishnan"
-              width={325}
-              height={325}
-              className="relative rounded-full shadow-2xl ring-4 ring-teal-500/20"
-            />
-          </div>
-        </div>
-        <div className="md:mt-2 md:w-3/5">
-          <h1 className="text-4xl font-bold mt-6 md:mt-0 md:text-7xl bg-gradient-to-r from-gray-900 via-teal-700 to-teal-600 dark:from-white dark:via-teal-300 dark:to-cyan-400 bg-clip-text text-transparent">
-            Hi, I&#39;m Arav!
-          </h1>
-          <p className="text-lg mt-4 mb-2 md:text-xl font-medium text-teal-600 dark:text-teal-400">
-            MS Computer Science Student | AI/ML Engineer | Healthcare NLP Researcher
-          </p>
-          <p className="text-base mt-2 mb-6 md:text-lg text-gray-700 dark:text-gray-300">
-            Graduate student at UMass Amherst (May 2026) specializing in AI/ML and Natural Language Processing.
-            Building innovative solutions at the intersection of healthcare and artificial intelligence to make
-            medical care more accessible across languages and cultures.
-          </p>
+    <section id="home" className="relative min-h-screen flex items-center justify-center">
+      <SpotlightMask />
 
-          {/* Social Links */}
-          <div className="flex flex-row items-center justify-center md:justify-start space-x-4 mb-6">
+      <div className="w-full max-w-7xl mx-auto px-6 lg:px-8 py-16 relative z-10 flex flex-col min-h-screen">
+        {/* Top-right status indicator */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="absolute top-8 right-8 font-mono text-xs tracking-wider"
+        >
+          <div className="flex items-center gap-2 text-terminal-green">
+            <span className="w-2 h-2 rounded-full bg-terminal-green animate-glow-pulse"></span>
+            <span>STATUS: ACTIVE // UMASS_AMHERST</span>
+          </div>
+        </motion.div>
+
+        {/* Main content */}
+        <div className="flex flex-col items-center justify-center text-center space-y-8 flex-1 pb-32">
+          {/* Terminal-style name */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="space-y-6"
+          >
+            <h1 className="text-5xl md:text-7xl font-sans font-bold tracking-tight">
+              <span className="text-white">Arav Adikesh</span>
+              <br />
+              <span className="text-gray-400">Ramakrishnan</span>
+            </h1>
+
+            <div className="font-mono text-sm md:text-base text-gray-400 tracking-wide space-y-1">
+              <p>&gt;&gt; MS Computer Science Student</p>
+              <p>&gt;&gt; AI/ML Engineer</p>
+              <p>&gt;&gt; Healthcare NLP Researcher</p>
+            </div>
+          </motion.div>
+
+          {/* Bio paragraph */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="max-w-2xl text-base md:text-lg text-gray-400 font-mono leading-relaxed"
+          >
+            Graduate student at UMass Amherst (May 2026) specializing in AI/ML and Natural Language Processing.
+            Building LLM-powered agentic systems and innovative solutions at the intersection of healthcare and 
+            artificial intelligence to make medical care more accessible across languages and cultures.
+          </motion.p>
+
+          {/* Social links - terminal style */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.0 }}
+            className="flex items-center gap-6"
+          >
             <a
-              href="mailto:aravadikesh@gmail.com"
+              href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
-              aria-label="Email"
+              className="group relative p-3 glass-terminal glass-terminal-hover rounded-xl"
+              title="View Resume"
             >
-              <AiOutlineMail size={28} />
+              <HiOutlineDocument className="w-6 h-6 text-gray-400 group-hover:text-cyan-electric transition-colors" />
+              <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-void-100 text-xs font-mono text-gray-300 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                Resume
+              </span>
             </a>
             <a
               href="https://linkedin.com/in/aravadikesh"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
-              aria-label="LinkedIn"
+              className="group relative p-3 glass-terminal glass-terminal-hover rounded-xl"
+              title="LinkedIn Profile"
             >
-              <AiOutlineLinkedin size={28} />
+              <AiOutlineLinkedin className="w-6 h-6 text-gray-400 group-hover:text-cyan-electric transition-colors" />
+              <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-void-100 text-xs font-mono text-gray-300 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                LinkedIn
+              </span>
             </a>
             <a
               href="https://github.com/aravadikesh"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
-              aria-label="GitHub"
+              className="group relative p-3 glass-terminal glass-terminal-hover rounded-xl"
+              title="GitHub Profile"
             >
-              <AiOutlineGithub size={28} />
+              <AiOutlineGithub className="w-6 h-6 text-gray-400 group-hover:text-cyan-electric transition-colors" />
+              <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-void-100 text-xs font-mono text-gray-300 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                GitHub
+              </span>
             </a>
-          </div>
-
-          {/* Navigation Buttons */}
-          <div className="flex flex-wrap gap-3 justify-center md:justify-start animate-fadeIn animation-delay-4">
-            <Link
-              to="experience"
-              className="inline-block text-white font-semibold px-6 py-3 bg-gradient-to-r from-teal-600 to-cyan-500 rounded-lg shadow-lg hover:shadow-teal-500/50 hover:scale-105 transition-all duration-300"
-              activeClass="active"
-              spy={true}
-              smooth={true}
-              offset={-100}
-              duration={500}
-              style={{ animationDelay: '0.5s' }}
-            >
-              Work Experience
-            </Link>
-            <Link
-              to="experience"
-              className="inline-block text-teal-600 dark:text-teal-400 font-semibold px-6 py-3 border-2 border-teal-600 dark:border-teal-400 rounded-lg hover:bg-teal-600 hover:text-white dark:hover:bg-teal-400 dark:hover:text-gray-900 hover:scale-105 transition-all duration-300"
-              activeClass="active"
-              spy={true}
-              smooth={true}
-              offset={-100}
-              duration={500}
-              style={{ animationDelay: '0.6s' }}
-            >
-              Research
-            </Link>
-            <Link
-              to="projects"
-              className="inline-block text-teal-600 dark:text-teal-400 font-semibold px-6 py-3 border-2 border-teal-600 dark:border-teal-400 rounded-lg hover:bg-teal-600 hover:text-white dark:hover:bg-teal-400 dark:hover:text-gray-900 hover:scale-105 transition-all duration-300"
-              activeClass="active"
-              spy={true}
-              smooth={true}
-              offset={-100}
-              duration={500}
-              style={{ animationDelay: '0.7s' }}
-            >
-              Projects
-            </Link>
-          </div>
+          </motion.div>
         </div>
-      </div>
-      <div className="flex flex-row items-center text-center justify-center">
-        <Link
-          to="about"
-          activeClass="active"
-          spy={true}
-          smooth={true}
-          offset={-100}
-          duration={500}
-          className="cursor-pointer hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+
+        {/* Scroll indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 1.6 }}
+          className="absolute bottom-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         >
-          <HiArrowDown size={35} className="animate-bounce" />
-        </Link>
+          <span className="font-mono text-xs text-gray-500 tracking-wider">SCROLL TO EXPLORE</span>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            className="w-6 h-10 border-2 border-gray-600 rounded-full p-1"
+          >
+            <div className="w-1 h-2 bg-cyan-electric rounded-full mx-auto"></div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   )

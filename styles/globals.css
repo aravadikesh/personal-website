@@ -1,3 +1,171 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --void-black: #030303;
+    --electric-cyan: #00f0ff;
+    --terminal-green: #00ff41;
+  }
+
+  html {
+    @apply scroll-smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-void-600 text-gray-100 transition-colors duration-300;
+    font-family: var(--font-mono), monospace;
+    background-image: var(--bg-noise);
+    /* Force dark mode - no light theme */
+  }
+
+  /* Remove default focus outlines */
+  *:focus {
+    outline: none;
+  }
+
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible {
+    outline: 2px solid rgba(0, 240, 255, 0.5);
+    outline-offset: 2px;
+  }
+
+  /* Terminal-style typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans; /* Inter Tight for headers */
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    font-weight: 700;
+  }
+
+  p, span, li {
+    @apply font-mono; /* Geist Mono for body */
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+  }
+
+  /* Electric cyan selection */
+  ::selection {
+    @apply bg-cyan-electric/20 text-cyan-electric;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-void-600;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-void-50 rounded-full;
+    border: 2px solid var(--void-black);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-cyan-electric;
+  }
+}
+
+@layer components {
+  /* Holographic glass effect */
+  .glass-terminal {
+    @apply backdrop-blur-terminal bg-void-600/40 border border-void-50/10;
+    box-shadow: inset 0 0 60px rgba(0, 240, 255, 0.03);
+  }
+
+  .glass-terminal-hover {
+    @apply hover:border-cyan-electric/50 hover:shadow-cyan-glow;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Scan line effect for terminal aesthetic */
+  .scan-lines {
+    position: relative;
+  }
+
+  .scan-lines::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(transparent, rgba(0, 240, 255, 0.1), transparent);
+    animation: scanLine 8s linear infinite;
+    pointer-events: none;
+    z-index: 1000;
+  }
+
+  /* Noise texture overlay */
+  .noise-overlay {
+    position: relative;
+  }
+
+  .noise-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="3" numOctaves="3" /%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.05"/%3E%3C/svg%3E');
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: overlay;
+  }
+}
+
+@layer utilities {
+  .text-shadow-cyan {
+    text-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+  }
+
+  .text-shadow-cyan-lg {
+    text-shadow: 0 0 40px rgba(0, 240, 255, 0.8);
+  }
+
+  /* Spring physics transitions */
+  .transition-spring {
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .transition-smooth {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Animation delay utilities */
+  .animation-delay-100 {
+    animation-delay: 0.1s;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 0.3s;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+  }
+
+  .animation-delay-500 {
+    animation-delay: 0.5s;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+  }
+
+  .animation-delay-700 {
+    animation-delay: 0.7s;
+  }
+
+  .animation-delay-800 {
+    animation-delay: 0.8s;
+  }
+}
